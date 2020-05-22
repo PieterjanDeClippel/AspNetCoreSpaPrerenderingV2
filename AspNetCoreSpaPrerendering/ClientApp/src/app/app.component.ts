@@ -12,7 +12,7 @@ export class AppComponent {
 
   constructor(private translateService: TranslateService, @Inject('MESSAGE') message: string) {
     this.message = message;
-    this.translateService.setDefaultLang('en');
+    this.translateService.setDefaultLang('de');
   }
 
   useLanguage(language: string) {
