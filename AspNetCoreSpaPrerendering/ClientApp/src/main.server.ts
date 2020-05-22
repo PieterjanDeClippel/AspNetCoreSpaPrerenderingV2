@@ -20,6 +20,7 @@ export default createServerRenderer(params => {
     { provide: 'BOOT_PARAMS', useValue: params },
     { provide: 'BASE_URL', useFactory: getBaseUrl, deps: ['BOOT_PARAMS'] },
     { provide: 'SERVERSIDE', useValue: true },
+    { provide: 'MESSAGE', useValue: params.data.message },
   ];
 
   const options = {

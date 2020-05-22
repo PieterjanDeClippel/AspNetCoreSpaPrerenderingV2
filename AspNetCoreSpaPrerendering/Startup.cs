@@ -79,6 +79,11 @@ namespace AspNetCoreSpaPrerendering
                         : null;
 
                     options.ExcludeUrls = new[] { "/sockjs-node" };
+
+                    options.SupplyData = (context, data) =>
+                    {
+                        data["message"] = "Message from the server";
+                    };
                 });
 
                 if (env.IsDevelopment())
