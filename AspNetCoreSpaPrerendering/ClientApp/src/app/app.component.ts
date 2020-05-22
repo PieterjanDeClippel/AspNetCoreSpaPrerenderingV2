@@ -1,4 +1,5 @@
 import { Component, Inject } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,12 @@ export class AppComponent {
   title = 'ClientApp';
   message = '';
 
-  constructor(@Inject('MESSAGE') message: string) {
+  constructor(private translateService: TranslateService, @Inject('MESSAGE') message: string) {
     this.message = message;
+    this.translateService.setDefaultLang('en');
+  }
+
+  useLanguage(language: string) {
+    this.translateService.use(language);
   }
 }

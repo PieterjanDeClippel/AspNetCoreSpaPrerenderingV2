@@ -347,7 +347,12 @@
   <!-- Ngx-translate Card -->
   <h2>Ngx-translate</h2>
   <div class="card highlight-card card-small">
-    <span>{{ message }}</span>
+    <span>{{ 'demo.title' | translate }}</span>
+    <br />
+    <span>{{ 'demo.text' | translate }}</span>
+    <br />
+    <button (click)="useLanguage('en')">en</button>
+    <button (click)="useLanguage('de')">de</button>
   </div>
 
   <!-- Resources -->
